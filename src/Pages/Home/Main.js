@@ -194,7 +194,7 @@ export default function Main() {
           <img src={diamondPattern} width={"100%"} height={"100%"} alt="" />
         </div>
       </div>
-      <div className="area">
+      {/* <div className="area">
         <ul className="circles">
           <li></li>
           <li></li>
@@ -207,7 +207,7 @@ export default function Main() {
           <li></li>
           <li></li>
         </ul>
-      </div>
+      </div> */}
     </>
   );
 }
