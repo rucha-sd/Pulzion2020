@@ -18,13 +18,36 @@ function App() {
             <Glimpses />
           </Route>
           <Route exact path="/login">
-            <Auth />
+            <div style={{ zIndex: 10 }}>
+              <Auth />
+            </div>
           </Route>
           <Route exact path="/register">
-            <Auth />
+            <div style={{ zIndex: 10 }}>
+              <Auth />
+            </div>
           </Route>
+        <Route exact path="/about">
+          <div style={{zIndex: 10}}>
+            <Auth />
+          </div>
+        </Route>
         </Switch>
       </Router>
+      <div className="area">
+        <ul className="circles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
     </div>
   );
 }
