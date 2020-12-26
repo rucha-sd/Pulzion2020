@@ -1,406 +1,262 @@
+import React from "react";
+import "./Main.css";
+import diamondPattern from "./diamond-about.svg";
+import img3 from "./images/Acm img.png";
+import img2 from "./images/Acmw img.png";
+import img1 from "./images/Pasc img.png";
+import * as R from "./index2";
+import { IoLocationSharp } from "react-icons/io5";
+import { IoMail } from "react-icons/io5";
+import {SiInstagram} from "react-icons/si";
+import {AiFillLinkedin} from "react-icons/ai";
+import {AiFillFacebook} from "react-icons/ai";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-.main-about {
-  flex: 2;
-  overflow: hidden;
-  z-index: 10 !important;
-}
-span{
-  font-size: 18px;
-}
-.btn-about{
-    display: inline-block;
-    font-weight: 400;
-    color: #212529;
-    text-align: center;
-    vertical-align: middle;
-    -webkit-user-select: none;
-    user-select: none;
-    background-color: transparent;
-    border: 1px solid transparent;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    outline: none !important;
-    line-height: 1.5;
-    border-radius: 0.25rem;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-.container-about{
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
-/* body {
-  font-family: 'Roboto Slab', serif;
-  color: white;
-  background-color: black;
-} */
-
-section {
-  margin-top: 4rem;
-  margin-bottom: 7rem;
-}
-
-h1 {
-  font-size: 3rem;
-  margin-bottom: 0;
-  margin-top: 0;
-}
-
-h2 {
-  padding-top: 3%;
-  font-size: 32px;
-}
-
-/* Heading */
-
-.main-h1-div {
+export default function(){
   
-  text-align:center;
-  position:absolute;
-  /* border:3px solid #1b96f3; */
-  width:300px;
-  /* border-radius:20px; */
-  left:50%;
-  margin: -50px 0 0 -150px;
-  /* -moz-box-shadow: 0px 0px 5px 2px #1b96f3;
-  box-shadow: 0px 0px 5px 2px #1b96f3; */
+  return (
+    <>
+      <div className="main-about">
+        <section id="container-about main-h1-section">
+          <div className="main-h1-div ">
+            <h1 className="About-Us">About Us</h1>
+          </div>
+        </section>
+        <section id="pulzion-section" className="row pulzion-row">
+          <div className="pulzion-bg-box  container-about col-lg-8">
+            <div className="container-about  pulzion-div col-lg-12">
+              <h2 className="pulzion-heading">Pulzion 20</h2>
+              <p className="pulzion-text">
+                Pulzion is the annual technical fest organized by PICT ACM
+                Student Chapter. Pulzion has hosted multmiple events including
+                coding competition ranging from amateur competitions two
+                day-long as well as mock placements, business management based
+                and quizzing events. It has become one of the most anticipated
+                events taking place at PICT with participants from colleges all
+                over Pune. With high aspirations, backed with sincerity and
+                dedication, the PASC team aims to add value to the college and
+                all the people in it.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section id="pulzion-section-small " className="pulzion-row-small">
+          <div className="container-about  pulzion-div">
+            <h2 className="pulzion-heading">Pulzion 20</h2>
+            <p className="pulzion-text slide-left">
+              Pulzion is the annual technical fest organized by PICT ACM Student
+              Chapter. Pulzion has hosted multmiple events including coding
+              competition ranging from amateur competitions two day-long as well
+              as mock placements, business management based and quizzing events.
+              It has become one of the most anticipated events taking place at
+              PICT with participants from colleges all over Pune. With high
+              aspirations, backed with sincerity and dedication, the PASC team
+              aims to add value to the college and all the people in it.
+            </p>
+          </div>
+        </section>
+        <section id="pasc-acm-acmw-section">
+          <div className="container-about pasc-acm-acmw-div-container">
+            <div className="row pasc-acm-acmw-div-row">
+              <div className="col-lg-4">
+                <div className="about-div">
+                  <h2 className="header haeder-block">PASC</h2>
+                  <p className="about-text">
+                    PICT ACM Student's Chapter (PASC) is the most active ACM
+                    chapter in India.
+                  </p>
+                  <p className="about-text">#UnitedWeStand</p>
+                  <p className="about-text">
+                    At PASC, we all work together, as a team. We take utmost
+                    efforts for the success of each and every member of PASC.
+                    <span className="dots1">...</span>
+                    <span id="more1">
+                      We help them to achieve not only technical superiority but
+                      also bring the best out of them in Non-technical fields as
+                      well so that they become the pioneers of today's world.
+                      Since, we at PASC bring our Motto into reality, last year
+                      we were honored as the BEST ACM STUDENT CHAPTER IN INDIA.
+                    </span>
+                  </p>
+                  <button
+                    type="button"
+                    className="btn-about btn-dark btn-1"
+                    onClick={R.btn_1}
+                  >
+                    Show More
+                  </button>
+                </div>
+                <img className="pasc-img" src={img1} alt="" />
+              </div>
 
-}
+              <div className="col-lg-4">
+                <div className="about-div">
+                  <h2 className="header haeder-block">ACM-W</h2>
+                  <p className="about-text">
+                    With the objective to support and celebrate the full
+                    engagement of women in all aspects of computing field, we
+                    conducted an event ACM Pune ‘Celebration of Women in
+                    Computing’ (APCWIC-2018) in association with ACM-W India and
+                    ACM Pune Professional Chapter. This was{" "}
+                    <span class="dots2">...</span>{" "}
+                    <span id="more2">
+                      the first edition and it was held at PICT, Pune. We
+                      organized this event to provide a platform to women
+                      professionals and girl students for interaction with
+                      eminent individuals from the industry as well as academia,
+                      where in they learned about the various challenges and how
+                      one can overcome them
+                    </span>
+                  </p>
+                  <button
+                    type="button"
+                    className="btn-about btn-dark btn-2"
+                    onClick={R.btn_2}
+                  >
+                    Show more
+                  </button>
+                </div>
+                <img className="acmw-img" src={img2} alt="" />
+              </div>
+              <div className="col-lg-4">
+                <div class="about-div">
+                  <h2 className="header haeder-block">ACM</h2>
+                  <p className="about-text">
+                    The Association for <br /> Computing Machinery (ACM) is the
+                    world’s largest educational and scientific society uniting
+                    professionals, educators and researchers in the field of
+                    computer science to inspire dialogue, share resources and
+                    address the challenges in the domain. The purpose of this{" "}
+                    <span class="dots3">...</span>
+                    <span id="more3">
+                      {" "}
+                      organization is to advance the scientific development,
+                      construction and application of the new machinery for
+                      computing, reasoning, and handling of information. The
+                      mission is to offer the students an opportunity to learn,
+                      innovate and grow into intellectuals, visionaries and
+                      technocrats, who contribute to promoting the advancements
+                      in science and technology. The ACM India Council is an
+                      effort of ACM aimed at improving the level of ACM
+                      activities across the country. The ACM India Council
+                      comprises a cross-section of the Computer Science and
+                      Information Technology communities committed to increasing
+                      the visibility and relevance <br /> of ACM in India.
+                    </span>
+                  </p>
+                  <button
+                    type="button"
+                    className="btn-about btn-dark btn-2"
+                    onClick={R.btn_3}
+                  >
+                    Show more
+                  </button>
+                </div>
+                <img class="acm-img" src={img3} alt=""></img>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="additional">
+          <div className="container-about">
+            <div className="row">
+              <div className="col "></div>
+              <div className="col-lg-8 col-sm-12">
+                <div className="row">
+                  <div className="col col-circle">
+                    <div className="circle members">
+                      <div className="icon">
+                        <br />
+                        <h5 className="header">200+</h5>
+                        <h5 className="header">Members</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col col-circle">
+                    <div className="circle footfall">
+                      <div className="icon">
+                        <br />
+                        <h5 className="header">5000+</h5>
+                        <h5 className="header">Footfall</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col col-circle">
+                    <div className="circle events">
+                      <div className="icon">
+                        <br />
+                        <h5 className="header">15+</h5>
+                        <h5 className="header">Events</h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col"></div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div className="container-about">
+            <h1 className="Header Contact-Us">Contact Us</h1>
+          </div>
 
-.About-Us
-{
-    color:white;
-    font-size: 3rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
-}
-.header{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: white;
-}
-.haeder-block{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color:#1b96f3 ;
-}
-/* Pulzion */
-.pulzion-bg-box{
-  background-color: #004d88;
-   margin-top:10px;
-   padding: 0px;
-   height: 285px;
-   border-radius: 5%;
-}
-.pulzion-div {
-  margin: auto;
-  display: block;
-  margin-top: -14px;
-  max-width:75%;
-  text-align: center;
-  border-radius: 6%;
-  border-bottom-right-radius: 50% ;
-  border-top-left-radius: 50%; 
-  background-color:#1b96f3;
-  margin-bottom: 50px;
-  border-top: 15px solid #1a1a1a;
-  border-bottom: 15px solid #1a1a1a;
-  border-right: 5px solid #1a1a1a;
-  border-left: 5px solid #1a1a1a;
-}
-.pulzion-row-small{
-  display: unset;
-  
-}
-.pulzion-heading {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-top: -10px;
-    font-size:225%;
-    color:#0c314e;
-    
-}
-.pulzion-text {
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-bottom: 3%;
-  font-size: 118%;
-  text-align: center;
-  color: #0c314e;
-}
-
-/* Pasc and ACM */
-.col-lg-4 {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-
-.about-div {
-  margin: auto;
-  margin-bottom: 2rem;
-  max-width: 315px;
-  text-align: center;
-  border:0px solid #1b96f3;
-  border-radius: 2%;
-  display: block;
-  animation: animate 3s ease-in-out infinite;
-  animation: border-flicker 3s linear infinite;
-}
-
-.about-text {
-  font-size: 18px;
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-bottom: 3%;
-  
-  color: white;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-#more1 {
-  display: none;
-}
-
-#more2 {
-  display: none;
-}
-
-#more3 {
-  display: none;
-}
-
-.pasc-img {
-  margin-top: 1rem;
-  max-width: 70%;
-}
-
-.acm-img {
-  max-width: 50%
-}
-
-.acmw-img {
-  max-width: 70%;
-}
-#pasc-acm-acmw-section
-{
-  margin-bottom: 1rem;
-}
-
-.circle {
-  margin: auto;
-  margin-bottom: 15px;
-  width: 130px;
-  height: 130px;
-  text-align: center;
-  border: 3px solid #1b96f3;
-  border-radius: 100px;
-  box-shadow: 0px 0px 20px 4px #1b96f3;
-  position: relative;
-  animation: animatecircle1 2s ease-in-out infinite;
-}
-
-.members {
-  animation: animatecircle1 2s ease-in-out infinite;
-}
-
-.events {
-  animation: animatecircle1 2s ease-in-out infinite;
-}
-
-.footfall {
-  animation: animatecircle2 2s ease-in-out infinite;
-}
-
-.icon {
-  margin-top: 5%;
-}
-
-/* Contact-us */
-#contact-us-section {
-  margin-bottom: 0;
-}
-.Contact-Us{
-    text-align:center;
-    margin-bottom: 100px;
-    color: white;
-}
-.contact-us-container {
-  text-align: center;
-  padding-bottom: 4rem;
-
-}
-
-.contact-us-text {
-  
-  color: white;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin-top:15px;
-}
-
-/* Address */
-.address-content {
-  text-align: center;
-  margin:0px;
-  display:block;
-
-}
-@media screen and (max-width: 767px) {
-  .pulzion-div {
-    margin: auto;
-    max-width: 80%;
-    text-align: center;
-    border: 1px solid;
-    border-radius: 3%;
-    display: block;
-    animation: animate 3s ease-in-out infinite;
-  }
-
-  .footfall {
-    animation: animatecircle1 2s ease-in-out infinite;
-  }
-
-  .events {
-    animation: animatecircle2 2s ease-in-out infinite;
-  }
-}
-
-@keyframes slide-left {
-  from {
-    margin-left: 100%;
-    width: 300%; 
-  }
-
-  to {
-    margin-left: 0%;
-    width: 100%;
-  }
-}
-@keyframes animate {
-  0% {
-    transform: translateY(-5px);
-  }
-
-  50% {
-    transform: translateY(5px);
-  }
-
-  100% {
-    transform: translateY(-5px);
-  }
-}
-@keyframes border-flicker {
-  0% {
-    opacity:0.1;
-    -webkit-box-shadow: 0px 0px 10px 4px #1b96f3;
-    -moz-box-shadow: 0px 0px 10px 4px #1b96f3;
-    box-shadow: 0px 0px 10px 4px #1b96f3;
-    transform: translateY(-5px);
-  }
-
-  2% {
-    opacity:1;
-    -webkit-box-shadow: 0px 0px 10px 2px #1b96f3;
-    -moz-box-shadow: 0px 0px 10px 2px #1b96f3;
-    box-shadow: 0px 0px 10px 2px #1b96f3;
-  }
-  4% {
-    opacity:0.1;
-    -webkit-box-shadow: 0px 0px 10px 2px #1b96f3;
-    -moz-box-shadow: 0px 0px 10px 2px #1b96f3;
-    box-shadow: 0px 0px 10px 2px #1b96f3;
-  }
-  50%{
-    transform: translateY(5px);
-  }
-  8% {
-    opacity:1;
-    -webkit-box-shadow: 0px 0px 10px 2px #1b96f3;
-    -moz-box-shadow: 0px 0px 10px 2px #1b96f3;
-    box-shadow: 0px 0px 10px 2px #1b96f3;
-  }
-  70% {
-    opacity:0.7;
-    -webkit-box-shadow: 0px 0px 10px 2px #1b96f3;
-    -moz-box-shadow: 0px 0px 10px 2px #1b96f3;
-    box-shadow: 0px 0px 10px 2px #1b96f3;
-
-  }
-  100% {
-    opacity:1;
-    -webkit-box-shadow: 0px 0px 10px 2px #1b96f3;
-    -moz-box-shadow: 0px 0px 10px 2px #1b96f3;
-    box-shadow: 0px 0px 10px 2px #1b96f3;
-    transform: translateY(-5px);
-  }
-}
-@keyframes animatecircle1 {
-  0% {
-    transform: translateY(-10px);
-  }
-
-  50% {
-    transform: translateY(10px);
-  }
-
-  100% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes animatecircle2 {
-  0% {
-    transform: translateY(10px);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-
-  100% {
-    transform: translateY(10px);
-  }
-}
-.diamond-pattern-about {
-  height: 200px;
-  width: 200px;
-  position: absolute;
-  left: -50px;
-  z-index: 990;
-  bottom: -600px;
-}
-
-.icon{
-    margin-left:10px;
-    margin-top:5px;
-    text-decoration: none;
-}
-a{
-    text-decoration: none;
-}
-@media only screen and (max-width: 1400px) {
-  .diamond-pattern-about{
-    display: none;
-  }
-  .pulzion-bg-box{
-    display: none;
-  }
-}
-@media only screen and (min-width:1400px){
-  .pulzion-row-small{
-    display:none;
-  }
-}
-@media (min-width: 768px) {
-  .container-about {
-    width: 750px;
-  }
-}
-@media (min-width: 992px) {
-  .container-about {
-    width: 970px;
-  }
-}
-@media (min-width: 1200px) {
-  .container-about {
-    width: 1170px;
-  }
+          <div className="container-about">
+            <div className=" row ">
+              <div className="address-content  col-lg-4 header">
+                <h2>Address</h2>
+                <IoLocationSharp size={30} />
+                <h5>Pune Institute of Computer Technology,</h5>
+                <h5>Behind Bharati Vidyapeeth University,</h5>
+                <h5>Dhankawadi, Pune,</h5>
+                <h5>Maharashtra-411043</h5>
+              </div>
+              <div className="container-about col-lg-4 contact-us-container">
+                <div className="contact-us-heading"></div>
+                <div className="contact-us-text">
+                  <IoMail size={30} />
+                  <h5>acm.pict@gmail.com</h5>
+                  <h5>abc - 1111111</h5>
+                  <h5>xyz - 2222222</h5>
+                  <a
+                    className="social"
+                    href="https://www.linkedin.com/company/pict-acm-student-chapter/"
+                  >
+                    <AiFillLinkedin className="icon" size="30" />
+                  </a>
+                  <a
+                    className="social"
+                    href="https://www.instagram.com/acm.pict/"
+                  >
+                    <SiInstagram className="icon" size="25" />
+                  </a>
+                  <a
+                    className="social"
+                    href="https://www.facebook.com/acmpict/"
+                  >
+                    <AiFillFacebook className="icon" size="30" />
+                  </a>
+                </div>
+              </div>
+              <div className="col-lg-4 address-content">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15138.304757794562!2d73.8508336!3d18.4575421!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x871eddd0a8a0a108!2sSCTR&#39;S%20Pune%20Institute%20of%20Computer%20Technology!5e0!3m2!1sen!2sin!4v1607946113596!5m2!1sen!2sin"
+                  width="290"
+                  height="300"
+                  frameborder="0"
+                  style={{ border: 0 }}
+                  allowfullscreen=""
+                  aria-hidden="false"
+                  tabindex="0"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+          <div className="diamond-pattern-about">
+            <img src={diamondPattern} width={"100%"} height={"100%"} alt="" />
+          </div>
+        </section>
+      </div>
+    </>
+  );
 }
