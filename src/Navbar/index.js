@@ -11,7 +11,7 @@ const variants = {
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   let location = useLocation();
-  console.log();
+
   return (
     <>
       <motion.div
@@ -22,7 +22,7 @@ function Navbar() {
         <img
           src={closeIcon}
           alt=""
-          width="30px"
+          width="20px"
           className="close-menu"
           onClick={() => setIsOpen(!isOpen)}
         />
@@ -33,6 +33,7 @@ function Navbar() {
               className={
                 location.pathname === "/" ? "selected nav-link" : "nav-link"
               }
+              onClick={() => setIsOpen(!isOpen)}
             >
               Home
             </Link>
@@ -45,8 +46,20 @@ function Navbar() {
                   ? "selected nav-link"
                   : "nav-link"
               }
+              onClick={() => setIsOpen(!isOpen)}
             >
               About
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/team"
+              className={
+                location.pathname === "/team" ? "selected nav-link" : "nav-link"
+              }
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              Team
             </Link>
           </li>
           <li>
@@ -57,6 +70,7 @@ function Navbar() {
                   ? "selected nav-link"
                   : "nav-link"
               }
+              onClick={() => setIsOpen(!isOpen)}
             >
               Events
             </Link>
@@ -69,6 +83,7 @@ function Navbar() {
                   ? "selected nav-link"
                   : "nav-link"
               }
+              onClick={() => setIsOpen(!isOpen)}
             >
               Previous Glimpses
             </Link>
@@ -96,6 +111,15 @@ function Navbar() {
             }
           >
             About
+          </Link>
+
+          <Link
+            to="/team"
+            className={
+              location.pathname === "/team" ? "selected nav-link" : "nav-link"
+            }
+          >
+            Team
           </Link>
 
           <Link

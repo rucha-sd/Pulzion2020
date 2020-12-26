@@ -4,6 +4,8 @@ import Home from "./Pages/Home";
 import Navbar from "./Navbar";
 import Glimpses from "./Pages/previous-glimpses/Glimpses";
 import Auth from "./Pages/Login_SignUp/auth/auth";
+import About from "./Pages/About_Page";
+import Team from "./Pages/Team";
 
 function App() {
   return (
@@ -27,11 +29,14 @@ function App() {
               <Auth />
             </div>
           </Route>
-        <Route exact path="/about">
-          <div style={{zIndex: 10}}>
-            <Auth />
-          </div>
-        </Route>
+          <Route exact path="/about">
+            <About />
+          </Route>
+          <Route path="/team">
+            <div style={{ zIndex: 10 }}>
+              <Team />
+            </div>
+          </Route>
         </Switch>
       </Router>
       <div className="area">

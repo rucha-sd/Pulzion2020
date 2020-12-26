@@ -1,6 +1,6 @@
 import React from "react";
 import "./Main.css";
-import diamondPattern from "./diamond.svg";
+import diamondPattern from "./diamond-about.svg";
 import img3 from "./images/Acm img.png";
 import img2 from "./images/Acmw img.png";
 import img1 from "./images/Pasc img.png";
