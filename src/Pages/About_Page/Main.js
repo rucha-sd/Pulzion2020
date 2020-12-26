@@ -10,21 +10,21 @@ import { IoMail } from "react-icons/io5";
 import {SiInstagram} from "react-icons/si";
 import {AiFillLinkedin} from "react-icons/ai";
 import {AiFillFacebook} from "react-icons/ai";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function(){
   
   return (
     <>
-      <div className="main">
-        <section id="container main-h1-section">
+      <div className="main-about">
+        <section id="container-about main-h1-section">
           <div className="main-h1-div ">
             <h1 className="About-Us">About Us</h1>
           </div>
         </section>
         <section id="pulzion-section" className="row pulzion-row">
-          <div className="pulzion-bg-box  container col-lg-8">
-            <div className="container  pulzion-div col-lg-12">
+          <div className="pulzion-bg-box  container-about col-lg-8">
+            <div className="container-about  pulzion-div col-lg-12">
               <h2 className="pulzion-heading">Pulzion 20</h2>
               <p className="pulzion-text">
                 Pulzion is the annual technical fest organized by PICT ACM
@@ -40,13 +40,10 @@ export default function(){
             </div>
           </div>
         </section>
-        <section
-          id="pulzion-section-small "
-          className="pulzion-row-small"
-        >
-          <div className="container  pulzion-div">
+        <section id="pulzion-section-small " className="pulzion-row-small">
+          <div className="container-about  pulzion-div">
             <h2 className="pulzion-heading">Pulzion 20</h2>
-            <p className="pulzion-text">
+            <p className="pulzion-text slide-left">
               Pulzion is the annual technical fest organized by PICT ACM Student
               Chapter. Pulzion has hosted multmiple events including coding
               competition ranging from amateur competitions two day-long as well
@@ -59,7 +56,7 @@ export default function(){
           </div>
         </section>
         <section id="pasc-acm-acmw-section">
-          <div className="container pasc-acm-acmw-div-container">
+          <div className="container-about pasc-acm-acmw-div-container">
             <div className="row pasc-acm-acmw-div-row">
               <div className="col-lg-4">
                 <div className="about-div">
@@ -83,7 +80,7 @@ export default function(){
                   </p>
                   <button
                     type="button"
-                    className="btn btn-dark btn-1"
+                    className="btn-about btn-dark btn-1"
                     onClick={R.btn_1}
                   >
                     Show More
@@ -113,7 +110,7 @@ export default function(){
                   </p>
                   <button
                     type="button"
-                    className="btn btn-dark btn-2"
+                    className="btn-about btn-dark btn-2"
                     onClick={R.btn_2}
                   >
                     Show more
@@ -149,7 +146,7 @@ export default function(){
                   </p>
                   <button
                     type="button"
-                    className="btn btn-dark btn-2"
+                    className="btn-about btn-dark btn-2"
                     onClick={R.btn_3}
                   >
                     Show more
@@ -161,7 +158,7 @@ export default function(){
           </div>
         </section>
         <section id="additional">
-          <div className="container">
+          <div className="container-about">
             <div className="row">
               <div className="col "></div>
               <div className="col-lg-8 col-sm-12">
@@ -200,11 +197,11 @@ export default function(){
           </div>
         </section>
         <section>
-          <div className="container">
+          <div className="container-about">
             <h1 className="Header Contact-Us">Contact Us</h1>
           </div>
 
-          <div className="container">
+          <div className="container-about">
             <div className=" row ">
               <div className="address-content  col-lg-4 header">
                 <h2>Address</h2>
@@ -214,7 +211,7 @@ export default function(){
                 <h5>Dhankawadi, Pune,</h5>
                 <h5>Maharashtra-411043</h5>
               </div>
-              <div className="container col-lg-4 contact-us-container">
+              <div className="container-about col-lg-4 contact-us-container">
                 <div className="contact-us-heading"></div>
                 <div className="contact-us-text">
                   <IoMail size={30} />
@@ -255,7 +252,7 @@ export default function(){
               </div>
             </div>
           </div>
-          <div className="diamond-pattern">
+          <div className="diamond-pattern-about">
             <img src={diamondPattern} width={"100%"} height={"100%"} alt="" />
           </div>
         </section>
