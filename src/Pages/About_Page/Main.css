@@ -9,7 +9,7 @@ span{
 .btn-about{
     display: inline-block;
     font-weight: 400;
-    color: #212529;
+    color: #000000;
     text-align: center;
     vertical-align: middle;
     -webkit-user-select: none;
@@ -143,6 +143,7 @@ h2 {
   display: block;
   animation: animate 3s ease-in-out infinite;
   animation: border-flicker 3s linear infinite;
+  background-image: url('./images/footer_lodyas.png');
 }
 
 .about-text {
