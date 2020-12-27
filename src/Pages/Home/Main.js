@@ -186,8 +186,8 @@ export default function Main() {
           transition={{ duration: 0.5 }}
           className="event-description"
         >
-          <h5>PASC'S ANNUAL</h5>
-          <h5>TECH EVENT</h5>
+          <div>PASC'S ANNUAL</div>
+          <div>TECH EVENT</div>
           <div className="red-line"></div>
         </motion.div>
         <div className="diamond-pattern">

@@ -39,7 +39,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
-      <div className="area">
+      {/* <div className="area">
         <ul className="circles">
           <li></li>
           <li></li>
@@ -52,7 +52,7 @@ function App() {
           <li></li>
           <li></li>
         </ul>
-      </div>
+      </div> */}
     </div>
   );
 }
