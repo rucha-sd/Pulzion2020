@@ -8,12 +8,12 @@ class Auth extends React.Component {
     const container = document.querySelector(".sign-in-container");
     container.setAttribute(
       "style",
-      "transform: rotateY(-180deg); transition: all 2s; backface-visibility: hidden; opacity: 0"
+      "transform: rotateY(180deg); transition: all 1s; backface-visibility: hidden; opacity: 0;"
     );
     const signUp = document.querySelector(".sign-up-container");
     signUp.setAttribute(
       "style",
-      "transform: rotateY(0deg); transition: all 2s;"
+      "transform: rotateY(0deg); transition: all 1s; backface-visibility: hidden;"
     );
   }
 
@@ -21,30 +21,26 @@ class Auth extends React.Component {
     const signUp = document.querySelector(".sign-up-container");
     signUp.setAttribute(
       "style",
-      "transform: rotateY(-180deg); transition: all 2s; backface-visibility: hidden;"
+      "transform: rotateY(180deg); transition: all 1s; backface-visibility: hidden;"
     );
 
     const container = document.querySelector(".sign-in-container");
     container.setAttribute(
       "style",
-      "transform: rotateY(-360deg); transition: all 2s; opacity: 1"
+      "transform: rotateY(0deg); transition: all 1s; backface-visibility: hidden; opacity: 1"
     );
   };
 
   signIn() {
     const signUpButton = document.getElementById("signUp");
     const container = document.getElementById("container");
-    signUpButton.addEventListener("click", () => {
-      container.classList.add("right-panel-active");
-    });
+    container.classList.add("right-panel-active");
   }
 
   signUp() {
     const signInButton = document.getElementById("signIn");
     const container = document.getElementById("container");
-    signInButton.addEventListener("click", () => {
-      container.classList.remove("right-panel-active");
-    });
+    container.classList.remove("right-panel-active");
   }
 
   render() {

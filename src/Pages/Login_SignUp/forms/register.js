@@ -1,96 +1,133 @@
 import React, { Component } from "react";
+import axios from "axios";
 class Register extends Component {
   state = {
-    fname: "",
-    lname: "",
-    contactNumber: "",
-    year: "",
-    college: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
+    fnameError: "",
+    lnameError: "",
+    contactNumberError: "",
+    yearError: "",
+    collegeError: "",
+    emailError: "",
+    passwordError: "",
+    confirmPasswordError: "",
+    year: "Year",
   };
-
   onChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
   onSubmit = async (e) => {
     e.preventDefault();
-    const elements = document.getElementsByClassName("error");
-    for (var i = elements.length - 1; i >= 0; i--) {
-      elements[i].remove();
-    }
-    Object.keys(this.state).forEach(async (ele) => {
-      if (this.state[ele].trim() === "") {
-        document.getElementsByName(ele).forEach((sub) => {
-          sub.insertAdjacentHTML(
-            "afterend",
-            `<div class="error">*Required</div>`
-          );
+    this.setState({
+      fnameError: "",
+      lnameError: "",
+      contactNumberError: "",
+      yearError: "",
+      collegeError: "",
+      emailError: "",
+      passwordError: "",
+      confirmPasswordError: "",
+    });
+    const fname = e.target.elements.fname.value.trim();
+    const lname = e.target.elements.lname.value.trim();
+    const email = e.target.elements.email.value.trim();
+    const college = e.target.elements.college.value.trim();
+    let year = this.state.year;
+    const ref = e.target.elements.yearOther;
+    const contactNumber = e.target.elements.contactNumber.value.trim();
+    const password = e.target.elements.password.value.trim();
+    const confirmPassword = e.target.elements.confirmPassword.value.trim();
+    if (
+      !fname ||
+      !lname ||
+      !email ||
+      !password ||
+      !college ||
+      year === "Year" ||
+      !contactNumber ||
+      !confirmPassword
+    ) {
+      if (!fname) {
+        this.setState({
+          fnameError: "*Required",
         });
       }
-    });
-
-    const {
-      fname,
-      lname,
-      year,
-      college,
-      contactNumber,
-      email,
-      password,
-    } = this.state;
-
-    if (password !== this.state.confirmPassword) {
-      document.getElementsByName("confirmPassword").forEach((sub) => {
-        sub.insertAdjacentHTML(
-          "afterend",
-          `<div class="error"> Password do not match </div>`
-        );
+      if (!lname) {
+        this.setState({
+          lnameError: "*Required",
+        });
+      }
+      if (!email) {
+        this.setState({
+          emailError: "*Required",
+        });
+      }
+      if (!password) {
+        this.setState({
+          passwordError: "*Required",
+        });
+      }
+      if (!confirmPassword) {
+        this.setState({
+          confirmPasswordError: "*Required",
+        });
+      }
+      if (!contactNumber) {
+        this.setState({
+          contactNumberError: "*Required",
+        });
+      }
+      if (!college) {
+        this.setState({
+          collegeError: "*Required",
+        });
+      }
+      if (year === "Year") {
+        this.setState({
+          yearError: "*Required",
+        });
+      }
+    } else if (password !== confirmPassword) {
+      this.setState({
+        confirmPasswordError: "Password Doesn't match.",
       });
-    } else if (
-      Object.keys(this.state).every((ele) => this.state[ele].trim() !== "")
-    ) {
+    } else {
+      if (year === "other") {
+        const yearOther = ref.value.trim();
+        if (!yearOther) {
+          this.setState({
+            yearError: "*Required",
+          });
+          return;
+        }
+        year = yearOther;
+      }
       var myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
-      var raw = JSON.stringify({
-        fname,
-        lname,
-        email,
-        password,
-        contactNumber,
-        college,
-        year,
-      });
       var requestOptions = {
-        method: "POST",
         headers: myHeaders,
-        body: raw,
         redirect: "follow",
       };
       try {
-        const res = await fetch(
-          "http://localhost:8080/user/register",
-          requestOptions
-        );
-        const data = await res.json();
-        console.log(data.error);
-
-        if (data.error) {
-          const errors = data.error;
-          for (let i = 0; i < errors.length; i++) {
-            const key = Object.keys(errors[i])[0];
-            const val = Object.values(errors[i])[0];
-            document.getElementsByName(key).forEach((sub) => {
-              sub.insertAdjacentHTML(
-                "afterend",
-                `<div class="error"> ${val}</div>`
-              );
+        const res = await axios.post("http://localhost:8080/user/register", {
+          email,
+          password,
+          fname,
+          lname,
+          year,
+          college,
+          contactNumber,
+        });
+        if (res.data.error) {
+          res.data.error.forEach((element) => {
+            this.setState({
+              [Object.keys(element)[0]]: Object.values(element)[0],
             });
-          }
+          });
         }
-      } catch (e) {}
+      } catch (e) {
+        console.log(e);
+      }
     }
   };
 
@@ -102,62 +139,83 @@ class Register extends Component {
           placeholder="First Name"
           name="fname"
           value={this.state.fname}
-          onChange={this.onChange}
         />
+        {this.state.fnameError && (
+          <div className="error">{this.state.fnameError}</div>
+        )}
         <input
           type="text"
           placeholder="Last Name"
           name="lname"
           value={this.state.lname}
-          onChange={this.onChange}
         />
-
+        {this.state.lnameError && (
+          <div className="error">{this.state.lnameError}</div>
+        )}
         <input
           type="text"
           placeholder="Contact number"
           name="contactNumber"
           value={this.state.contactNumber}
-          onChange={this.onChange}
         />
+        {this.state.contactNumberError && (
+          <div className="error">{this.state.contactNumberError}</div>
+        )}
         <input
           type="text"
           placeholder="College"
           name="college"
           value={this.state.college}
-          onChange={this.onChange}
         />
-
-        <input
-          type="text"
-          placeholder="Year"
-          name="year"
-          value={this.state.year}
-          onChange={this.onChange}
-        />
-
+        {this.state.collegeError && (
+          <div className="error">{this.state.collegeError}</div>
+        )}
+        <select name="year" id="drop-down" onChange={this.onChange}>
+          <option value="Year">Year</option>
+          <option value="FE">FE</option>
+          <option value="SE">SE</option>
+          <option value="TE">TE</option>
+          <option value="BE">BE</option>
+          <option value="other">Other</option>
+        </select>
+        {this.state.year === "other" ? (
+          <input
+            type="text"
+            name="yearOther"
+            placeholder="Enter year"
+            id="year"
+          />
+        ) : null}
+        {this.state.yearError && (
+          <div className="error">{this.state.yearError}</div>
+        )}
         <input
           type="text"
           placeholder="Email"
           name="email"
           value={this.state.email}
-          onChange={this.onChange}
         />
-
+        {this.state.emailError && (
+          <div className="error">{this.state.emailError}</div>
+        )}
         <input
           type="password"
           placeholder="Password"
           name="password"
           value={this.state.password}
-          onChange={this.onChange}
         />
-
+        {this.state.passwordError && (
+          <div className="error">{this.state.passwordError}</div>
+        )}
         <input
           type="password"
           placeholder="Confirm Password"
           name="confirmPassword"
           value={this.state.confirmPassword}
-          onChange={this.onChange}
         />
+        {this.state.confirmPasswordError && (
+          <div className="error">{this.state.confirmPasswordError}</div>
+        )}
         <button id="signup-btn" type="submit" className="btn">
           Sign Up
         </button>

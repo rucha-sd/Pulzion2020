@@ -1,53 +1,46 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 class Login extends Component {
   state = {
-    email: "",
-    password: "",
+    emailError: "",
+    passwordError: "",
     error: "",
   };
-
-  onChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
-
   onSubmit = async (e) => {
-    const { email, password } = this.state;
     e.preventDefault();
-    const elements = document.getElementsByClassName("error");
-    for (var i = elements.length - 1; i >= 0; i--) {
-      elements[i].remove();
-    }
-    Object.keys(this.state).forEach((ele) => {
-      if (this.state[ele].trim() === "") {
-        document.getElementsByName(ele).forEach((sub) => {
-          sub.insertAdjacentHTML(
-            "afterend",
-            `<div class="error"> *Required </div>`
-          );
+    this.setState({
+      emailError: "",
+      passwordError: "",
+      error: "",
+    });
+    const email = e.target.elements.email.value.trim();
+    const password = e.target.elements.password.value.trim();
+    if (!email || !password) {
+      if (!email) {
+        this.setState({
+          emailError: "*Required",
         });
       }
-    });
-    if (email.trim() !== "" && password.trim() !== "") {
+      if (!password) {
+        this.setState({
+          passwordError: "*Required",
+        });
+      }
+    } else {
       var myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
-      var raw = JSON.stringify({ email, password });
-
       var requestOptions = {
-        method: "POST",
         headers: myHeaders,
-        body: raw,
         redirect: "follow",
       };
-
       try {
-        const res = await fetch(
-          "http://localhost:8080/user/login",
-          requestOptions
-        );
-        const data = await res.json();
-        if (data.error) {
-          this.setState({ error: data.error });
+        const res = await axios.post("http://localhost:8080/user/login", {
+          email,
+          password,
+        });
+        if (res.data.error) {
+          this.setState({ error: res.data.error });
         }
       } catch (e) {
         console.log(e.message);
@@ -65,16 +58,20 @@ class Login extends Component {
           placeholder="Email"
           name="email"
           value={this.state.email}
-          onChange={this.onChange}
         />
+        {this.state.emailError && (
+          <div className="error">{this.state.emailError}</div>
+        )}
         <input
           id="password"
           type="password"
           placeholder="Password"
           name="password"
           value={this.state.password}
-          onChange={this.onChange}
         />
+        {this.state.passwordError && (
+          <div className="error">{this.state.passwordError}</div>
+        )}
         <div>
           <a href="!#" className="link">
             Forgot your password?
