@@ -194,12 +194,12 @@ export default function Main() {
           <img src={diamondPattern} width={"100%"} height={"100%"} alt="" />
         </div>
         <footer className="desktop-footer">
-        © 2019 PICT ACM Student Chapter. All Rights Reserved. Designed &
+        © 2020 PICT ACM Student Chapter. All Rights Reserved. Designed &
         Developed with ♥ by PASC Web Team
       </footer>
       </div>
       <footer className="mobile-footer">
-        © 2019 PICT ACM Student Chapter. All Rights Reserved. Designed &
+        © 2020 PICT ACM Student Chapter. All Rights Reserved. Designed &
         Developed with ♥ by PASC Web Team
       </footer>
       

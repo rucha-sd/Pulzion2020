@@ -20,7 +20,7 @@ function App() {
           <Route exact path="/previous-glimpses">
             <Glimpses />
             <footer>
-              © 2019 PICT ACM Student Chapter. All Rights Reserved. Designed &
+              © 2020 PICT ACM Student Chapter. All Rights Reserved. Designed &
               Developed with ♥ by PASC Web Team
             </footer>
           </Route>
@@ -28,7 +28,7 @@ function App() {
             <div style={{ zIndex: 10 }}>
               <Auth />
               <footer style={{position : "absolute",bottom : 0, width : "100%"}}>
-                © 2019 PICT ACM Student Chapter. All Rights Reserved. Designed &
+                © 2020 PICT ACM Student Chapter. All Rights Reserved. Designed &
                 Developed with ♥ by PASC Web Team
               </footer>
             </div>
@@ -37,7 +37,7 @@ function App() {
             <div style={{ zIndex: 10 }}>
               <Auth />
               <footer style={{position : "absolute",bottom : 0, width : "100%"}}>
-                © 2019 PICT ACM Student Chapter. All Rights Reserved. Designed &
+                © 2020 PICT ACM Student Chapter. All Rights Reserved. Designed &
                 Developed with ♥ by PASC Web Team
               </footer>
             </div>
@@ -45,7 +45,7 @@ function App() {
           <Route exact path="/about">
             <About />
             <footer>
-              © 2019 PICT ACM Student Chapter. All Rights Reserved. Designed &
+              © 2020 PICT ACM Student Chapter. All Rights Reserved. Designed &
               Developed with ♥ by PASC Web Team
             </footer>
           </Route>
@@ -53,7 +53,7 @@ function App() {
             <div style={{ zIndex: 10 }}>
               <Team />
               <footer>
-                © 2019 PICT ACM Student Chapter. All Rights Reserved. Designed &
+                © 2020 PICT ACM Student Chapter. All Rights Reserved. Designed &
                 Developed with ♥ by PASC Web Team
               </footer>
             </div>
