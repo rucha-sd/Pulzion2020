@@ -1,4 +1,5 @@
 import "./App.css";
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import Navbar from "./Navbar";
@@ -18,23 +19,43 @@ function App() {
           </Route>
           <Route exact path="/previous-glimpses">
             <Glimpses />
+            <footer>
+              © 2019 PICT ACM Student Chapter. All Rights Reserved. Designed &
+              Developed with ♥ by PASC Web Team
+            </footer>
           </Route>
           <Route exact path="/login">
             <div style={{ zIndex: 10 }}>
               <Auth />
+              <footer style={{position : "absolute",bottom : 0, width : "100%"}}>
+                © 2019 PICT ACM Student Chapter. All Rights Reserved. Designed &
+                Developed with ♥ by PASC Web Team
+              </footer>
             </div>
           </Route>
           <Route exact path="/register">
             <div style={{ zIndex: 10 }}>
               <Auth />
+              <footer style={{position : "absolute",bottom : 0, width : "100%"}}>
+                © 2019 PICT ACM Student Chapter. All Rights Reserved. Designed &
+                Developed with ♥ by PASC Web Team
+              </footer>
             </div>
           </Route>
           <Route exact path="/about">
             <About />
+            <footer>
+              © 2019 PICT ACM Student Chapter. All Rights Reserved. Designed &
+              Developed with ♥ by PASC Web Team
+            </footer>
           </Route>
           <Route path="/team">
             <div style={{ zIndex: 10 }}>
               <Team />
+              <footer>
+                © 2019 PICT ACM Student Chapter. All Rights Reserved. Designed &
+                Developed with ♥ by PASC Web Team
+              </footer>
             </div>
           </Route>
         </Switch>

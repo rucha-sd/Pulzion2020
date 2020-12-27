@@ -143,7 +143,15 @@ function Navbar() {
           </Link>
         </div>
         <div className="login-btn-div">
-          <Link to="/login" className="login-btn">
+          <Link
+            to="/login"
+            className={
+              location.pathname === "/login" ||
+              location.pathname === "/register"
+                ? "selected login-btn"
+                : "login-btn"
+            }
+          >
             Login
           </Link>
 

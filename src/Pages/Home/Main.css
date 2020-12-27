@@ -11,6 +11,32 @@
   z-index: 10;
 }
 
+.desktop-footer{
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.mobile-footer{
+  display: none;
+  padding: 10px 20px;
+}
+
+@media(max-width : 1031px){
+  .mobile-footer{
+    display: block;
+  }
+  .desktop-footer{
+    display: none;
+  }
+}
+
+.register-btn:hover{
+  text-decoration: none;
+  color: #1b96f3;
+}
+
 .mobile-view{
   display: none;
 }

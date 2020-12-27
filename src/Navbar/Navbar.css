@@ -27,6 +27,12 @@
   font-size: 80%;
 }
 
+.nav-links .nav-link:hover,
+.login-btn:hover{
+  text-decoration: none;
+  color : white;
+} 
+
 .login-btn-div {
   display: flex;
   flex-direction: row;

@@ -6,6 +6,12 @@
   flex-direction: column;
 }
 
+footer{
+  padding: 20px 0;
+  text-align: center;
+  color: white;
+}
+
 /* animation */
 /* 
 .area {
