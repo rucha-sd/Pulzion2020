@@ -32,7 +32,7 @@ function Glimpses() {
               className={classes.text}
               variant="h3"
               style={{
-                fontFamily: "BatmanForeverAlternate",
+                fontFamily: "Segoe UI",
                 textAlign: "center",
               }}
               gutterBottom
