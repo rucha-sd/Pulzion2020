@@ -7,6 +7,7 @@ import Glimpses from "./Pages/previous-glimpses/Glimpses";
 import Auth from "./Pages/Login_SignUp/auth/auth";
 import About from "./Pages/About_Page";
 import Team from "./Pages/Team";
+import Events from './Pages/Events'
 
 function App() {
   return (
@@ -56,6 +57,11 @@ function App() {
                 © 2020 PICT ACM Student Chapter. All Rights Reserved. Designed &
                 Developed with ♥ by PASC Web Team
               </footer>
+            </div>
+          </Route>
+          <Route path="/events">
+            <div style={{ zIndex: 10 }}>
+              <Events/>
             </div>
           </Route>
         </Switch>

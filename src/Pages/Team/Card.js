@@ -6,11 +6,11 @@ import 'aos/dist/aos.css';
 
 const TeamCard = ({ name, designation, image, link }) => {
 
-  AOS.init({ duration : 1000});
+  AOS.init({ duration : 500});
 
   return (
     <>
-      <div className="col-md-4 team-member" data-aos="fade-up" data-aos-offset="100" data-aos-easing="ease-in-sine">
+      <div className="col-md-4 team-member" data-aos="fade" data-aos-offset="100" data-aos-easing="ease-in-sine">
         <div className="card inner">
           <img src={image}></img>
         </div>
